@@ -1,0 +1,6 @@
+com\mycompany\clinicreservationsystem\ViewStudent.class
+com\mycompany\clinicreservationsystem\DeleteStudent.class
+com\mycompany\clinicreservationsystem\UpdateStudent.class
+com\mycompany\clinicreservationsystem\DBConnection.class
+com\mycompany\clinicreservationsystem\Main.class
+com\mycompany\clinicreservationsystem\InsertStudent.class
