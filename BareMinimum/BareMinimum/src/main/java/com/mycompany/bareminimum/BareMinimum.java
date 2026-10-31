@@ -1,5 +1,6 @@
 package com.mycompany.bareminimum;
 
+import com.mycompany.bareminimum.facilitator_management_package.*;
 import java.sql.*;
 import java.util.*;
 
@@ -36,7 +37,7 @@ public class BareMinimum {
                     break;
 
                 case 2:
-                    System.out.println("Facilitator Management");
+                    facilitatorMenu(scanner);
                     break;
 
                 case 3:
@@ -96,6 +97,48 @@ public class BareMinimum {
 
                 case 4:
                     DeleteStudent.main(new String[]{});
+                    break;
+
+                case 5:
+                    System.out.println("Returning to Main Menu...");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+
+        } while (choice != 5);
+    }
+    
+    public static void facilitatorMenu(Scanner scanner){
+        int choice = 0;
+        
+        do {
+            System.out.println("\n===== FACILITATOR MANAGEMENT =====");
+            System.out.println("1. Insert Facilitator");
+            System.out.println("2. View Facilitator");
+            System.out.println("3. Update Facilitator");
+            System.out.println("4. Delete Facilitator");
+            System.out.println("5. Return to Main Menu");
+
+            System.out.print("Enter Choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    InsertFacilitator.insert();
+                    break;
+
+                case 2:
+                    ViewFacilitator.view();
+                    break;
+
+                case 3:
+                    UpdateFacilitator.update();
+                    break;
+
+                case 4:
+                    DeleteFacilitator.delete();
                     break;
 
                 case 5:

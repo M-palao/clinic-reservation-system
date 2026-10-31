@@ -1,6 +1,10 @@
 com\mycompany\bareminimum\UpdateStudent.class
+com\mycompany\bareminimum\facilitator_management_package\InsertFacilitator.class
+com\mycompany\bareminimum\facilitator_management_package\DeleteFacilitator.class
+com\mycompany\bareminimum\facilitator_management_package\ViewFacilitator.class
+com\mycompany\bareminimum\facilitator_management_package\UpdateFacilitator.class
+com\mycompany\bareminimum\ViewStudent.class
 com\mycompany\bareminimum\DBConnection.class
 com\mycompany\bareminimum\DeleteStudent.class
 com\mycompany\bareminimum\InsertStudent.class
 com\mycompany\bareminimum\BareMinimum.class
-com\mycompany\bareminimum\ViewStudent.class
