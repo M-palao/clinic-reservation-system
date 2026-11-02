@@ -1,5 +1,6 @@
 package com.mycompany.clinicreservation;
 
+import class_management_package.*;
 import com.mycompany.clinicreservation.student_management_package.ViewStudent;
 import com.mycompany.clinicreservation.student_management_package.DeleteStudent;
 import com.mycompany.clinicreservation.student_management_package.UpdateStudent;
@@ -17,6 +18,7 @@ public class Main {
         Connection connection = DBConnection.getConnection();
 
         if (connection != null) {
+            System.out.println("Database connected successfully!");
             System.out.println("Java connected to your sql.");
         } else {
             System.out.println("Database connection failed.");
@@ -29,9 +31,10 @@ public class Main {
             System.out.println("\n===== CLINIC RESERVATION SYSTEM =====");
             System.out.println("1. Student Management");
             System.out.println("2. Facilitator Management");
-            System.out.println("3. Nurse Management");
-            System.out.println("4. Clearance Management");
-            System.out.println("5. Exit");
+            System.out.println("3. Class Management");
+            System.out.println("4. Nurse Management");
+            System.out.println("5. Clearance Management");
+            System.out.println("6. Exit");
 
             System.out.print("Enter choice: ");
             choice = scanner.nextInt();
@@ -44,16 +47,18 @@ public class Main {
                 case 2:
                     facilitatorMenu(scanner);
                     break;
-
                 case 3:
+                    classMenu(scanner);
+                    break;
+                case 4:
                     nurseMenu(scanner);
                     break;
 
-                case 4:
+                case 5:
                     System.out.println("Clearance Management");
                     break;
 
-                case 5:
+                case 6:
                     System.out.println("Exiting system...");
                     break;
 
@@ -61,7 +66,7 @@ public class Main {
                     System.out.println("Invalid Choice");
             }
 
-        } while (choice != 5);
+        } while (choice != 6);
 
         scanner.close();
         try {
@@ -155,6 +160,49 @@ public class Main {
             }
 
         } while (choice != 5);
+    }
+    
+    public static void classMenu(Scanner scanner){
+        int choice = 0;
+        
+        do {
+            System.out.println("\n===== CLASS MANAGEMENT =====");
+            System.out.println("1. Insert Class");
+            System.out.println("2. View Class");
+            System.out.println("3. Update Class");
+            System.out.println("4. Delete Class");
+            System.out.println("5. Return to Main Menu");
+
+            System.out.print("Enter Choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    InsertClass.insert();
+                    break;
+
+                case 2:
+                    ViewClass.view();
+                    break;
+
+                case 3:
+                    UpdateClass.update();
+                    break;
+
+                case 4:
+                    DeleteClass.delete();
+                    break;
+
+                case 5:
+                    System.out.println("Returning to Main Menu...");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+
+        } while (choice != 5);
+    
     }
     
     public static void nurseMenu(Scanner scanner) {
