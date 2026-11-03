@@ -16,7 +16,7 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class UpdateClass {
+public abstract class UpdateClass {
      public static void update(){
         Scanner inputScanner = new Scanner(System.in);
         String classId;

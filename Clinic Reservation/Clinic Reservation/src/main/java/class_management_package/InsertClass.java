@@ -14,7 +14,7 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class InsertClass {
+public abstract class InsertClass {
     public static void insert(){
         Scanner inputScanner = new Scanner(System.in);
         String classId;

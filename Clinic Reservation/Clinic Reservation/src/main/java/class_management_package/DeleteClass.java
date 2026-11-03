@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class DeleteClass {
+public abstract class DeleteClass {
     public static void delete()
     {
         Scanner inputScanner = new Scanner(System.in);

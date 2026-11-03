@@ -60,4 +60,20 @@ public abstract class CheckTable {
         
         return check(sql, classId);
     }
+    
+    public static boolean checkStudent(String studentId){
+        String sql = "SELECT student_id "
+                + "FROM STUDENT "
+                + "WHERE student_id = ?";
+        
+        return check(sql, studentId);
+    }
+    
+    public static boolean checkEnrollment(String enrollmentId){
+        String sql = "SELECT enrollment_id "
+                + "FROM ENROLLMENT "
+                + "WHERE enrollment_id = ?";
+        
+        return check(sql, enrollmentId);
+    }
 }
