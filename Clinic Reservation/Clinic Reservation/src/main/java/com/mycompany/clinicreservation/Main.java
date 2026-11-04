@@ -8,6 +8,9 @@ import com.mycompany.clinicreservation.student_management_package.InsertStudent;
 import com.mycompany.clinicreservation.facilitator_management_package.*;
 import com.mycompany.clinicreservation.nurse_management_package.*;
 import enrollment_management_package.*;
+import com.mycompany.clinicreservation.clearance_package.*;
+
+
 import java.sql.*;
 import java.util.*;
 
@@ -60,7 +63,7 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("Clearance Management");
+                    clearanceMenu(scanner);
                     break;
 
                 case 7:
@@ -295,4 +298,53 @@ public class Main {
 
     } while (choice != 5);
 }
+    
+public static void clearanceMenu(Scanner scanner) {
+    int choice = 0;
+
+    do {
+        System.out.println("\n===== CLEARANCE MANAGEMENT =====");
+        System.out.println("[1] Insert Clearance");
+        System.out.println("[2] View Clearance");
+        System.out.println("[3] Update Clearance");
+        System.out.println("[4] Delete Clearance");
+        System.out.println("[5] Return to Main Menu");
+        System.out.print("Enter choice: ");
+
+        try {
+            choice = Integer.parseInt(scanner.nextLine());
+
+            switch (choice) {
+                case 1:
+                    InsertClearance.insert();
+                    break;
+
+                case 2:
+                    ViewClearance.view();
+                    break;
+
+                case 3:
+                    UpdateClearance.update();
+                    break;
+
+                case 4:
+                    DeleteClearance.delete();
+                    break;
+
+                case 5:
+                    System.out.println("Returning to Main Menu...");
+                    break;
+
+                default:
+                    System.out.println("ERROR: Invalid choice!");
+            }
+
+        } catch (NumberFormatException e) {
+            System.out.println("ERROR: Please enter a number!");
+        }
+
+    } while (choice != 5);
+}
+    
+    
 }
