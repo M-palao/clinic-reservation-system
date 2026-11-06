@@ -7,7 +7,7 @@
  *
  * @author Samuel Trinidad
  */
-package com.mycompany.clinicreservation;
+package clinicreservation_main;
 
 import java.sql.*;
 

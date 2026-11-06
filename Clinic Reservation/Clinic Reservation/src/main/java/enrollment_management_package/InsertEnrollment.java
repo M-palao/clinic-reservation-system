@@ -4,8 +4,8 @@
  */
 package enrollment_management_package;
 
-import com.mycompany.clinicreservation.CheckTable;
-import com.mycompany.clinicreservation.DBConnection;
+import clinicreservation_main.CheckTable;
+import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Scanner;

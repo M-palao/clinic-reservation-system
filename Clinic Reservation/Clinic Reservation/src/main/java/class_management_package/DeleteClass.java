@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package class_management_package;
 
-import com.mycompany.clinicreservation.CheckTable;
-import com.mycompany.clinicreservation.DBConnection;
+import clinicreservation_main.CheckTable;
+import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-/**
- *
- * @author USER
- */
 public abstract class DeleteClass {
     public static void delete()
     {

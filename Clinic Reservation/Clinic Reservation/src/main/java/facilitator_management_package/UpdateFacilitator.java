@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.clinicreservation.facilitator_management_package;
+package facilitator_management_package;
 
-import com.mycompany.clinicreservation.DBConnection;
+import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Scanner;
@@ -13,14 +13,27 @@ import java.util.Scanner;
  *
  * @author USER
  */
-public class InsertFacilitator {
-    public static void insert(){
+public class UpdateFacilitator {
+    public static void update(){
         Scanner inputScanner = new Scanner(System.in);
+        String faciId = "";
         String firstName;
         String lastName;
         String email;
         String contactNum = "";
         String department;
+        
+        do{
+            try{
+                System.out.print("Enter Facilitator ID: ");
+                faciId = inputScanner.next();
+                Integer.valueOf(faciId);
+            } catch (NumberFormatException e){
+                System.out.println("ERROR INVALID INPUT : " + "["+ faciId + "] " + "Contains non Integer values");
+                faciId = "";
+            }
+            
+        } while(faciId.isEmpty() || faciId.isBlank());
         
         do{
             System.out.print("Enter New First Name: ");
@@ -57,20 +70,20 @@ public class InsertFacilitator {
         
 
         
-        insertSQL(firstName, lastName, email, contactNum, department);
+        updateSQL(faciId, firstName, lastName, email, contactNum, department);
     }
     
-    private static void insertSQL(String firstName, String lastName, String email, String contactNum, String department)
-    {
-        String sql = "INSERT INTO FACILITATOR " 
-                     + "(first_Name, last_Name, email, contact_number, department) " 
-                     + "VALUES (?, ?, ?, ?, ?)";
+    private static void updateSQL(String id, String firstName, String lastName, String email, String contactNum, String department){
+        String sql = "UPDATE FACILITATOR "
+                     + "SET first_name = ?, last_name = ?, email = ?, contact_number = ?, department = ? "
+                     + "WHERE facilitator_id = ?";
         
         try (
             Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
             ) 
         {
+             ps.setString(6, id);
              ps.setString(1, firstName);
              ps.setString(2, lastName);
              ps.setString(3, email);
@@ -78,10 +91,12 @@ public class InsertFacilitator {
              ps.setString(5, department);
              
             int rows = ps.executeUpdate();
-                
-            if (rows > 0) {
-                    System.out.println("Facilitator inserted successfully!");
-            }
+             
+             if (rows > 0) {
+                 System.out.println("Facilitator Updated Successfully");
+             } else {
+                 System.out.println("Facilitator not found.");
+             }
              
          } catch (Exception e) {
              e.printStackTrace();

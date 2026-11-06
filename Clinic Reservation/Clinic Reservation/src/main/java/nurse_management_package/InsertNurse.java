@@ -1,6 +1,6 @@
-package com.mycompany.clinicreservation.nurse_management_package;
+package nurse_management_package;
 
-import com.mycompany.clinicreservation.DBConnection;
+import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Scanner;

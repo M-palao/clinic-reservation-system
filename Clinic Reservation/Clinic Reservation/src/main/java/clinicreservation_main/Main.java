@@ -1,14 +1,23 @@
-package com.mycompany.clinicreservation;
+package clinicreservation_main;
 
+import nurse_management_package.InsertNurse;
+import nurse_management_package.ViewNurse;
+import nurse_management_package.UpdateNurse;
+import nurse_management_package.DeleteNurse;
+import facilitator_management_package.DeleteFacilitator;
+import facilitator_management_package.ViewFacilitator;
+import facilitator_management_package.UpdateFacilitator;
+import facilitator_management_package.InsertFacilitator;
+import clearance_management_package.UpdateClearance;
+import clearance_management_package.ViewClearance;
+import clearance_management_package.InsertClearance;
+import clearance_management_package.DeleteClearance;
 import class_management_package.*;
-import com.mycompany.clinicreservation.student_management_package.ViewStudent;
-import com.mycompany.clinicreservation.student_management_package.DeleteStudent;
-import com.mycompany.clinicreservation.student_management_package.UpdateStudent;
-import com.mycompany.clinicreservation.student_management_package.InsertStudent;
-import com.mycompany.clinicreservation.facilitator_management_package.*;
-import com.mycompany.clinicreservation.nurse_management_package.*;
+import student_management_package.ViewStudent;
+import student_management_package.DeleteStudent;
+import student_management_package.UpdateStudent;
+import student_management_package.InsertStudent;
 import enrollment_management_package.*;
-import com.mycompany.clinicreservation.clearance_package.*;
 
 
 import java.sql.*;
