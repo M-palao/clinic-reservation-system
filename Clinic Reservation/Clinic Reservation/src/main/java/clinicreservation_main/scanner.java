@@ -2,7 +2,7 @@ package clinicreservation_main;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class scanner {
+public abstract class scanner {
     public static final Scanner sc = new Scanner(System.in);
     private scanner() {}
     public static void close() {

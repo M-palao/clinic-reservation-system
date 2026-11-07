@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package class_management_package;
 
 import clinicreservation_main.CheckTable;
@@ -10,13 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-/**
- *
- * @author USER
- */
 public abstract class InsertClass {
     public static void insert(){
-        
         String classId;
         String faciId = "";
         String subjectId;

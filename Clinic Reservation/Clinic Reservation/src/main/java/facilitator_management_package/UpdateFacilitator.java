@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package facilitator_management_package;
 
 import clinicreservation_main.DBConnection;
@@ -9,10 +5,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-/**
- *
- * @author USER
- */
 public class UpdateFacilitator {
     public static void update(){
         

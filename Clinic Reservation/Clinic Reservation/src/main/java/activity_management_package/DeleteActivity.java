@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package activity_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import clinicreservation_main.scanner;
-/**
- *
- * @author Samuel Trinidad
- */
-public class DeleteActivity {
 
+public abstract class DeleteActivity {
     public static void delete() {
         String activityId = "";
 

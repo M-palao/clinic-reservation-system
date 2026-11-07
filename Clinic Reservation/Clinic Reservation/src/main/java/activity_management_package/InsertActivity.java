@@ -6,8 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
-public class InsertActivity {
-
+public abstract class InsertActivity {
     public static void insert() {
         
 

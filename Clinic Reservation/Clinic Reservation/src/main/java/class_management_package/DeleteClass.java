@@ -10,7 +10,6 @@ import clinicreservation_main.scanner;
 public abstract class DeleteClass {
     public static void delete()
     {
-        
         String classId;
         
         do{

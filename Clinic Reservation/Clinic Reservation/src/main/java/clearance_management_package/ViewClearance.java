@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clearance_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
@@ -9,11 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import clinicreservation_main.scanner;
-/**
- *
- * @author Samuel Trinidad
- */
-public class ViewClearance {
+
+public abstract class ViewClearance {
     public static void view() {
         String sql = "SELECT * FROM CLEARANCE_FULL_VIEW";
          try(

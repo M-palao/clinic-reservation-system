@@ -1,6 +1,5 @@
 package subject_management_package;
 
-import class_management_package.*;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

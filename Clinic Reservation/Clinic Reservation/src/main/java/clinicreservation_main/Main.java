@@ -13,7 +13,6 @@ import java.sql.*;
 import clinicreservation_main.scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Connection connection = DBConnection.getConnection();
 

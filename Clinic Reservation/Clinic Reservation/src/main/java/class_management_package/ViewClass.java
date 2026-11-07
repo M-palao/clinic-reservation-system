@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package class_management_package;
 
 import clinicreservation_main.DBConnection;
@@ -10,12 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author USER
- */
 public abstract class ViewClass{
-    public static void view(){
+    public static void view() {
         String sql = "SELECT  class_id, first_name, last_name, subject_id " + 
                      "FROM CLASS C " +
                      "JOIN FACILITATOR F ON F.facilitator_id = C.facilitator_id";

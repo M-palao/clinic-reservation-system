@@ -1,12 +1,9 @@
 package subject_management_package;
 
-import class_management_package.*;
 import clinicreservation_main.CheckTable;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
 /**

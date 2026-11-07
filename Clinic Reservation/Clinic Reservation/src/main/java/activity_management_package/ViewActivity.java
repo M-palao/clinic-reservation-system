@@ -1,20 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package activity_management_package;
+
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-/**
- *
- * @author Samuel Trinidad
- */
-public class ViewActivity {
-     public static void view() {
 
+public abstract class ViewActivity {
+     public static void view() {
         String sql = "SELECT * FROM ACTIVITY";
 
         try (

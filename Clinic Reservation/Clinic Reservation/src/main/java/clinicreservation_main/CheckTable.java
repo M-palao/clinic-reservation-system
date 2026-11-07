@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clinicreservation_main;
 
 import java.sql.Connection;
@@ -9,12 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author USER
- */
 public abstract class CheckTable {
-    
     private static boolean check(String sql, String id){
         try (
             Connection con = DBConnection.getConnection();

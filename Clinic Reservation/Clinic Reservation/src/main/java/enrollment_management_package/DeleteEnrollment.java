@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package enrollment_management_package;
 
 import clinicreservation_main.CheckTable;
@@ -11,10 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
-/**
- *
- * @author USER
- */
 public abstract class DeleteEnrollment {
     public static void delete(){
         

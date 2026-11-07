@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clearance_management_package;
 
 import clinicreservation_main.DBConnection;
@@ -10,15 +6,8 @@ import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 import java.sql.*;
 
-
-/**
- *
- * @author Samuel Trinidad
- */
-public class InsertClearance {
+public abstract class InsertClearance {
     public static void insert() {
-        
-        
         String enrollment_id;
         String activity_id;
         String nurse_id;
