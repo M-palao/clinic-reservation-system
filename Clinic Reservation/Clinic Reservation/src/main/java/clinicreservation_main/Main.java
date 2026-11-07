@@ -235,9 +235,11 @@ public class Main {
             System.out.println("\n===== ENROLLMENT MANAGEMENT =====");
             System.out.println("1. Insert Enrollment");
             System.out.println("2. View Enrollment");
-            System.out.println("3. Update Enrollment");
-            System.out.println("4. Delete Enrollment");
-            System.out.println("5. Return to Main Menu");
+            System.out.println("3. View Student Count for Each Class");
+            System.out.println("4. View Students From Specific Class");
+            System.out.println("5. Update Enrollment");
+            System.out.println("6. Delete Enrollment");
+            System.out.println("7. Return to Main Menu");
 
             System.out.print("Enter Choice: ");
             choice = scanner.nextInt();
@@ -246,28 +248,29 @@ public class Main {
                 case 1:
                     InsertEnrollment.insert();
                     break;
-
                 case 2:
                     ViewEnrollment.view();
                     break;
-
                 case 3:
+                    ViewEnrollment.viewStudentCount();
+                    break;
+                case 4:
+                    ViewEnrollment.viewStudentsFromClass();
+                    break;
+                case 5:
                     UpdateEnrollment.update();
                     break;
-
-                case 4:
+                case 6:
                     DeleteEnrollment.delete();
                     break;
-
-                case 5:
+                case 7:
                     System.out.println("Returning to Main Menu...");
                     break;
-
                 default:
                     System.out.println("Invalid Choice");
             }
 
-        } while (choice != 5);
+        } while (choice != 7);
     
     }
     
