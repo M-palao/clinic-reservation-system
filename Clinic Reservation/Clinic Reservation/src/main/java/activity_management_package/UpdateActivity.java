@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Samuel Trinidad
  */
-    public class UpdateActivity {
+public class UpdateActivity {
 
     public static void update() {
         Scanner scanner = new Scanner(System.in);

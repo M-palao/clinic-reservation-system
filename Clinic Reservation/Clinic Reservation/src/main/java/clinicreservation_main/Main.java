@@ -45,43 +45,17 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    studentMenu(scanner);
-                    break;
-
-                case 2:
-                    facilitatorMenu(scanner);
-                    break;
-                case 3:
-                    nurseMenu(scanner);
-                    break;
-                case 4:
-                    subjectMenu(scanner);
-                    break;
-                case 5:
-                    classMenu(scanner);
-                    break;
-
-                case 6:
-                    enrollmentMenu(scanner);
-                    break;
-                    
-                case 7:
-                    activityMenu(scanner);
-                    break;      
-                
-                case 8:
-                    clearanceMenu(scanner);
-                    break;
-                    
-                case 9:
-                    System.out.println("Exiting system...");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: studentMenu(scanner); break;
+                case 2: facilitatorMenu(scanner); break;
+                case 3: nurseMenu(scanner); break;
+                case 4: subjectMenu(scanner); break;
+                case 5: classMenu(scanner); break;
+                case 6: enrollmentMenu(scanner); break;   
+                case 7: activityMenu(scanner); break;      
+                case 8: clearanceMenu(scanner); break;
+                case 9: System.out.println("Exiting system..."); break;
+                default: System.out.println("Invalid Choice");
             }
-
         } while (choice != 9);
 
         scanner.close();
@@ -107,28 +81,12 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertStudent.insert();
-                    break;
-
-                case 2:
-                    ViewStudent.view();
-                    break;
-
-                case 3:
-                    UpdateStudent.update();
-                    break;
-
-                case 4:
-                    DeleteStudent.delete();
-                    break;
-
-                case 5:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: InsertStudent.insert(); break;
+                case 2: ViewStudent.view(); break;
+                case 3: UpdateStudent.update(); break;
+                case 4: DeleteStudent.delete(); break;
+                case 5: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 5);
     }
@@ -148,28 +106,12 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertFacilitator.insert();
-                    break;
-
-                case 2:
-                    ViewFacilitator.view();
-                    break;
-
-                case 3:
-                    UpdateFacilitator.update();
-                    break;
-
-                case 4:
-                    DeleteFacilitator.delete();
-                    break;
-
-                case 5:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: InsertFacilitator.insert(); break;
+                case 2: ViewFacilitator.view(); break;
+                case 3: UpdateFacilitator.update(); break;
+                case 4: DeleteFacilitator.delete(); break;
+                case 5: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 5);
     }
@@ -189,28 +131,12 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertNurse.insert();
-                    break;
-
-                case 2:
-                    ViewNurse.view();
-                    break;
-
-                case 3:
-                    UpdateNurse.update();
-                    break;
-
-                case 4:
-                    DeleteNurse.delete();
-                    break;
-
-                case 5:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: InsertNurse.insert(); break;
+                case 2: ViewNurse.view(); break;
+                case 3: UpdateNurse.update(); break;
+                case 4: DeleteNurse.delete(); break;
+                case 5: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 5);
     }
@@ -230,28 +156,12 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertSubject.insert();
-                    break;
-
-                case 2:
-                    ViewSubject.view();
-                    break;
-
-                case 3:
-                    UpdateSubject.update();
-                    break;
-
-                case 4:
-                    DeleteSubject.delete();
-                    break;
-
-                case 5:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: InsertSubject.insert(); break;
+                case 2: ViewSubject.view(); break;
+                case 3: UpdateSubject.update(); break;
+                case 4: DeleteSubject.delete(); break;
+                case 5: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 5);
     }
@@ -271,28 +181,12 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertClass.insert();
-                    break;
-
-                case 2:
-                    ViewClass.view();
-                    break;
-
-                case 3:
-                    UpdateClass.update();
-                    break;
-
-                case 4:
-                    DeleteClass.delete();
-                    break;
-
-                case 5:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: InsertClass.insert(); break;
+                case 2: ViewClass.view(); break;
+                case 3: UpdateClass.update(); break;
+                case 4: DeleteClass.delete(); break;
+                case 5: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 5);
     }
@@ -314,78 +208,18 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertEnrollment.insert();
-                    break;
-                case 2:
-                    ViewEnrollment.view();
-                    break;
-                case 3:
-                    ViewEnrollment.viewStudentCount();
-                    break;
-                case 4:
-                    ViewEnrollment.viewStudentsFromClass();
-                    break;
-                case 5:
-                    UpdateEnrollment.update();
-                    break;
-                case 6:
-                    DeleteEnrollment.delete();
-                    break;
-                case 7:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-                default:
-                    System.out.println("Invalid Choice");
+                case 1: InsertEnrollment.insert(); break;
+                case 2: ViewEnrollment.view(); break;
+                case 3: ViewEnrollment.viewStudentCount(); break;
+                case 4: ViewEnrollment.viewStudentsFromClass(); break;
+                case 5: UpdateEnrollment.update(); break;
+                case 6: DeleteEnrollment.delete(); break;
+                case 7: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 7);
     }
     
-    public static void clearanceMenu(Scanner scanner) {
-        int choice = 0;
-
-        do {
-            System.out.println("\n===== CLEARANCE MANAGEMENT =====");
-            System.out.println("[1] Insert Clearance");
-            System.out.println("[2] View Clearance");
-            System.out.println("[3] Update Clearance");
-            System.out.println("[4] Delete Clearance");
-            System.out.println("[5] Return to Main Menu");
-            System.out.print("Enter choice: ");
-
-            try {
-                choice = scanner.nextInt();
-
-                switch (choice) {
-                    case 1:
-                        InsertClearance.insert();
-                        break;
-
-                    case 2:
-                        ViewClearance.view();
-                        break;
-
-                    case 3:
-                        UpdateClearance.update();
-                        break;
-
-                    case 4:
-                        DeleteClearance.delete();
-                        break;
-
-                    case 5:
-                        System.out.println("Returning to Main Menu...");
-                        break;
-
-                    default:
-                        System.out.println("ERROR: Invalid choice!");
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("ERROR: Please enter a number!");
-            }
-        } while (choice != 5);
-    }
-
     public static void activityMenu(Scanner scanner) {
         int choice;
 
@@ -401,31 +235,50 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
-                    InsertActivity.insert();
-                    break;
-
-                case 2:
-                    ViewActivity.view();
-                    break;
-
-                case 3:
-                    UpdateActivity.update();
-                    break;
-
-                case 4:
-                    DeleteActivity.delete();
-                    break;
-
-                case 5:
-                    System.out.println("Returning to Main Menu...");
-                    break;
-
-                default:
-                    System.out.println("Invalid choice!");
+                case 1: InsertActivity.insert(); break;
+                case 2: ViewActivity.view(); break;
+                case 3: UpdateActivity.update(); break;
+                case 4: DeleteActivity.delete(); break;
+                case 5: System.out.println("Returning to Main Menu..."); break;
+                default: System.out.println("Invalid Choice");
             }
         } while (choice != 5);
     } 
+    
+    public static void clearanceMenu(Scanner scanner) {
+        int choice = 0;
+
+        do {
+            System.out.println("\n===== CLEARANCE MANAGEMENT =====");
+            System.out.println("[1] Insert Clearance");
+            System.out.println("[2] View Clearances");
+            System.out.println("[3] View Approved Clearances");
+            System.out.println("[4] View Rejected Clearances");
+            System.out.println("[5] View Pending Clearances");
+            System.out.println("[6] Update Clearance");
+            System.out.println("[7] Delete Clearance");
+            System.out.println("[8] Return to Main Menu");
+            System.out.print("Enter choice: ");
+
+            try {
+                choice = scanner.nextInt();
+
+                switch (choice) {
+                    case 1: InsertClearance.insert(); break;
+                    case 2: ViewClearance.view(); break;
+                    case 3: ViewClearance.viewStudentStatus("Approved"); break;
+                    case 4: ViewClearance.viewStudentStatus("Rejected"); break;
+                    case 5: ViewClearance.viewStudentStatus("Pending"); break;
+                    case 6: UpdateClearance.update(); break;
+                    case 7: DeleteClearance.delete();
+                    case 8: System.out.println("Returning to Main Menu..."); break;
+                    default: System.out.println("Invalid Choice");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Please enter a number!");
+            }
+        } while (choice != 8);
+    }
 }
     
 
