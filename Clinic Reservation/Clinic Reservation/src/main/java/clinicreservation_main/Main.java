@@ -324,9 +324,12 @@ public static void clearanceMenu(Scanner scanner) {
         System.out.println("\n===== CLEARANCE MANAGEMENT =====");
         System.out.println("[1] Insert Clearance");
         System.out.println("[2] View Clearance");
-        System.out.println("[3] Update Clearance");
-        System.out.println("[4] Delete Clearance");
-        System.out.println("[5] Return to Main Menu");
+        System.out.println("[3] View Approved Clearances");
+        System.out.println("[4] View Rejected Clearances");
+        System.out.println("[5] View Pending Clearances");
+        System.out.println("[6] Update Clearance");
+        System.out.println("[7] Delete Clearance");
+        System.out.println("[8] Return to Main Menu");
         System.out.print("Enter choice: ");
 
         try {
@@ -340,16 +343,24 @@ public static void clearanceMenu(Scanner scanner) {
                 case 2:
                     ViewClearance.view();
                     break;
-
                 case 3:
+                    ViewClearance.viewStudentStatus("Approved");
+                    break;
+                case 4:
+                    ViewClearance.viewStudentStatus("Rejected");
+                    break;
+                case 5:
+                    ViewClearance.viewStudentStatus("Pending");
+                    break;
+                case 6:
                     UpdateClearance.update();
                     break;
 
-                case 4:
+                case 7:
                     DeleteClearance.delete();
                     break;
 
-                case 5:
+                case 8:
                     System.out.println("Returning to Main Menu...");
                     break;
 
@@ -361,7 +372,7 @@ public static void clearanceMenu(Scanner scanner) {
             System.out.println("ERROR: Please enter a number!");
         }
 
-    } while (choice != 5);
+    } while (choice != 8);
 }
     
 public static void activityMenu(Scanner scanner) {
