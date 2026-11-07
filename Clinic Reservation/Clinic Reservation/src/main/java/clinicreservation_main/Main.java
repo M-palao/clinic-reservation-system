@@ -1,25 +1,13 @@
 package clinicreservation_main;
 
-import nurse_management_package.InsertNurse;
-import nurse_management_package.ViewNurse;
-import nurse_management_package.UpdateNurse;
-import nurse_management_package.DeleteNurse;
-import facilitator_management_package.DeleteFacilitator;
-import facilitator_management_package.ViewFacilitator;
-import facilitator_management_package.UpdateFacilitator;
-import facilitator_management_package.InsertFacilitator;
-import clearance_management_package.UpdateClearance;
-import clearance_management_package.ViewClearance;
-import clearance_management_package.InsertClearance;
-import clearance_management_package.DeleteClearance;
+import student_management_package.*;
+import facilitator_management_package.*;
+import nurse_management_package.*;
+import subject_management_package.*;
 import class_management_package.*;
-import student_management_package.ViewStudent;
-import student_management_package.DeleteStudent;
-import student_management_package.UpdateStudent;
-import student_management_package.InsertStudent;
 import enrollment_management_package.*;
 import activity_management_package.*;
-
+import clearance_management_package.*;
 
 import java.sql.*;
 import java.util.*;
@@ -45,12 +33,13 @@ public class Main {
             System.out.println("\n===== CLINIC RESERVATION SYSTEM =====");
             System.out.println("1. Student Management");
             System.out.println("2. Facilitator Management");
-            System.out.println("3. Class Management");
-            System.out.println("4. Enrollment Management");
-            System.out.println("5. Nurse Management");
-            System.out.println("6. Clearance Management");
+            System.out.println("3. Nurse Management");
+            System.out.println("4. Subject Management");
+            System.out.println("5. Class Management");
+            System.out.println("6. Enrollment Management");
             System.out.println("7. Activity Management");
-            System.out.println("8. Exit");
+            System.out.println("8. Clearance Management");
+            System.out.println("9. Exit");
 
             System.out.print("Enter choice: ");
             choice = scanner.nextInt();
@@ -64,24 +53,28 @@ public class Main {
                     facilitatorMenu(scanner);
                     break;
                 case 3:
-                    classMenu(scanner);
+                    nurseMenu(scanner);
                     break;
                 case 4:
-                    enrollmentMenu(scanner);
+                    subjectMenu(scanner);
                     break;
                 case 5:
-                    nurseMenu(scanner);
+                    classMenu(scanner);
                     break;
 
                 case 6:
-                    clearanceMenu(scanner);
+                    enrollmentMenu(scanner);
                     break;
                     
                 case 7:
                     activityMenu(scanner);
-                    break;                    
-
+                    break;      
+                
                 case 8:
+                    clearanceMenu(scanner);
+                    break;
+                    
+                case 9:
                     System.out.println("Exiting system...");
                     break;
 
@@ -89,7 +82,7 @@ public class Main {
                     System.out.println("Invalid Choice");
             }
 
-        } while (choice != 8);
+        } while (choice != 9);
 
         scanner.close();
         try {
@@ -99,10 +92,8 @@ public class Main {
         }
     }
 
-    // STUDENT MENU
     public static void studentMenu(Scanner scanner) {
-
-        int choice;
+        int choice = 0;
 
         do {
             System.out.println("\n===== STUDENT MANAGEMENT =====");
@@ -139,7 +130,6 @@ public class Main {
                 default:
                     System.out.println("Invalid Choice");
             }
-
         } while (choice != 5);
     }
     
@@ -181,10 +171,91 @@ public class Main {
                 default:
                     System.out.println("Invalid Choice");
             }
+        } while (choice != 5);
+    }
+   
+    public static void nurseMenu(Scanner scanner) {
+        int choice = 0;
 
+        do {
+            System.out.println("\n===== NURSE MANAGEMENT =====");
+            System.out.println("1. Insert Nurse");
+            System.out.println("2. View Nurse");
+            System.out.println("3. Update Nurse");
+            System.out.println("4. Delete Nurse");
+            System.out.println("5. Return to Main Menu");
+
+            System.out.print("Enter Choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    InsertNurse.insert();
+                    break;
+
+                case 2:
+                    ViewNurse.view();
+                    break;
+
+                case 3:
+                    UpdateNurse.update();
+                    break;
+
+                case 4:
+                    DeleteNurse.delete();
+                    break;
+
+                case 5:
+                    System.out.println("Returning to Main Menu...");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
         } while (choice != 5);
     }
     
+    public static void subjectMenu(Scanner scanner){
+        int choice = 0;
+        
+        do {
+            System.out.println("\n===== SUBJECT MANAGEMENT =====");
+            System.out.println("1. Insert Subject");
+            System.out.println("2. View Subject");
+            System.out.println("3. Update Subject");
+            System.out.println("4. Delete Subject");
+            System.out.println("5. Return to Main Menu");
+
+            System.out.print("Enter Choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    InsertSubject.insert();
+                    break;
+
+                case 2:
+                    ViewSubject.view();
+                    break;
+
+                case 3:
+                    UpdateSubject.update();
+                    break;
+
+                case 4:
+                    DeleteSubject.delete();
+                    break;
+
+                case 5:
+                    System.out.println("Returning to Main Menu...");
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice");
+            }
+        } while (choice != 5);
+    }
+   
     public static void classMenu(Scanner scanner){
         int choice = 0;
         
@@ -223,9 +294,7 @@ public class Main {
                 default:
                     System.out.println("Invalid Choice");
             }
-
         } while (choice != 5);
-    
     }
     
     public static void enrollmentMenu(Scanner scanner){
@@ -269,84 +338,83 @@ public class Main {
                 default:
                     System.out.println("Invalid Choice");
             }
-
         } while (choice != 7);
-    
     }
     
-    public static void nurseMenu(Scanner scanner) {
+    public static void clearanceMenu(Scanner scanner) {
+        int choice = 0;
 
-    int choice = 0;
+        do {
+            System.out.println("\n===== CLEARANCE MANAGEMENT =====");
+            System.out.println("[1] Insert Clearance");
+            System.out.println("[2] View Clearance");
+            System.out.println("[3] Update Clearance");
+            System.out.println("[4] Delete Clearance");
+            System.out.println("[5] Return to Main Menu");
+            System.out.print("Enter choice: ");
 
-    do {
-        System.out.println("\n===== NURSE MANAGEMENT =====");
-        System.out.println("1. Insert Nurse");
-        System.out.println("2. View Nurse");
-        System.out.println("3. Update Nurse");
-        System.out.println("4. Delete Nurse");
-        System.out.println("5. Return to Main Menu");
+            try {
+                choice = scanner.nextInt();
 
-        System.out.print("Enter Choice: ");
-        choice = scanner.nextInt();
+                switch (choice) {
+                    case 1:
+                        InsertClearance.insert();
+                        break;
 
-        switch (choice) {
-            case 1:
-                InsertNurse.insert();
-                break;
+                    case 2:
+                        ViewClearance.view();
+                        break;
 
-            case 2:
-                ViewNurse.view();
-                break;
+                    case 3:
+                        UpdateClearance.update();
+                        break;
 
-            case 3:
-                UpdateNurse.update();
-                break;
+                    case 4:
+                        DeleteClearance.delete();
+                        break;
 
-            case 4:
-                DeleteNurse.delete();
-                break;
+                    case 5:
+                        System.out.println("Returning to Main Menu...");
+                        break;
 
-            case 5:
-                System.out.println("Returning to Main Menu...");
-                break;
+                    default:
+                        System.out.println("ERROR: Invalid choice!");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Please enter a number!");
+            }
+        } while (choice != 5);
+    }
 
-            default:
-                System.out.println("Invalid Choice");
-        }
+    public static void activityMenu(Scanner scanner) {
+        int choice;
 
-    } while (choice != 5);
-}
-    
-public static void clearanceMenu(Scanner scanner) {
-    int choice = 0;
+        do{
+            System.out.println("\n===== ACTIVITY MANAGEMENT =====");
+            System.out.println("[1] Insert Activity");
+            System.out.println("[2] View Activities");
+            System.out.println("[3] Update Activity");
+            System.out.println("[4] Delete Activity");
+            System.out.println("[5] Return to Main Menu");
+            System.out.print("Enter choice: ");      
 
-    do {
-        System.out.println("\n===== CLEARANCE MANAGEMENT =====");
-        System.out.println("[1] Insert Clearance");
-        System.out.println("[2] View Clearance");
-        System.out.println("[3] Update Clearance");
-        System.out.println("[4] Delete Clearance");
-        System.out.println("[5] Return to Main Menu");
-        System.out.print("Enter choice: ");
-
-        try {
             choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    InsertClearance.insert();
+                    InsertActivity.insert();
                     break;
 
                 case 2:
-                    ViewClearance.view();
+                    ViewActivity.view();
                     break;
 
                 case 3:
-                    UpdateClearance.update();
+                    UpdateActivity.update();
                     break;
 
                 case 4:
-                    DeleteClearance.delete();
+                    DeleteActivity.delete();
                     break;
 
                 case 5:
@@ -354,62 +422,10 @@ public static void clearanceMenu(Scanner scanner) {
                     break;
 
                 default:
-                    System.out.println("ERROR: Invalid choice!");
+                    System.out.println("Invalid choice!");
             }
-
-        } catch (NumberFormatException e) {
-            System.out.println("ERROR: Please enter a number!");
-        }
-
-    } while (choice != 5);
-}
-    
-public static void activityMenu(Scanner scanner) {
-    int choice;
-    
-    do{
-        System.out.println("\n===== ACTIVITY MANAGEMENT =====");
-        System.out.println("[1] Insert Activity");
-        System.out.println("[2] View Activities");
-        System.out.println("[3] Update Activity");
-        System.out.println("[4] Delete Activity");
-        System.out.println("[5] Return to Main Menu");
-        System.out.print("Enter choice: ");      
-        
-        choice = scanner.nextInt();
-        
-      
-
-        switch (choice) {
-            case 1:
-                InsertActivity.insert();
-                break;
-
-            case 2:
-                ViewActivity.view();
-                break;
-
-            case 3:
-                UpdateActivity.update();
-                break;
-
-            case 4:
-                DeleteActivity.delete();
-                break;
-
-            case 5:
-                System.out.println("Returning to Main Menu...");
-                break;
-
-            default:
-                System.out.println("Invalid choice!");
-        }
-
-    } while (choice != 5);
-}
-    
-    
-    
+        } while (choice != 5);
+    } 
 }
     
 
