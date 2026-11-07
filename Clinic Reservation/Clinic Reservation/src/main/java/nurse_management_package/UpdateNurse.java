@@ -6,14 +6,14 @@ package nurse_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 /**
  *
  * @author Samuel Trinidad
  */
 public class UpdateNurse {
     public static void update() {
-        Scanner scanner = new Scanner(System.in);
+        
         String nurse_Id = "";
         String first_Name;
         String last_Name;

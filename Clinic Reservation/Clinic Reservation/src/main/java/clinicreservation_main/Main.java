@@ -10,13 +10,11 @@ import activity_management_package.*;
 import clearance_management_package.*;
 
 import java.sql.*;
-import java.util.*;
+import clinicreservation_main.scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        Scanner scanner = new Scanner(System.in);
         Connection connection = DBConnection.getConnection();
 
         if (connection != null) {
@@ -45,14 +43,14 @@ public class Main {
             choice = scanner.nextInt();
 
             switch (choice) {
-                case 1: studentMenu(scanner); break;
-                case 2: facilitatorMenu(scanner); break;
-                case 3: nurseMenu(scanner); break;
-                case 4: subjectMenu(scanner); break;
-                case 5: classMenu(scanner); break;
-                case 6: enrollmentMenu(scanner); break;   
-                case 7: activityMenu(scanner); break;      
-                case 8: clearanceMenu(scanner); break;
+                case 1: studentMenu(); break;
+                case 2: facilitatorMenu(); break;
+                case 3: nurseMenu(); break;
+                case 4: subjectMenu(); break;
+                case 5: classMenu(); break;
+                case 6: enrollmentMenu(); break;   
+                case 7: activityMenu(); break;      
+                case 8: clearanceMenu(); break;
                 case 9: System.out.println("Exiting system..."); break;
                 default: System.out.println("Invalid Choice");
             }
@@ -66,7 +64,7 @@ public class Main {
         }
     }
 
-    public static void studentMenu(Scanner scanner) {
+    public static void studentMenu() {
         int choice = 0;
 
         do {
@@ -91,7 +89,7 @@ public class Main {
         } while (choice != 5);
     }
     
-    public static void facilitatorMenu(Scanner scanner){
+    public static void facilitatorMenu(){
         int choice = 0;
         
         do {
@@ -116,7 +114,7 @@ public class Main {
         } while (choice != 5);
     }
    
-    public static void nurseMenu(Scanner scanner) {
+    public static void nurseMenu() {
         int choice = 0;
 
         do {
@@ -141,7 +139,7 @@ public class Main {
         } while (choice != 5);
     }
     
-    public static void subjectMenu(Scanner scanner){
+    public static void subjectMenu(){
         int choice = 0;
         
         do {
@@ -166,7 +164,7 @@ public class Main {
         } while (choice != 5);
     }
    
-    public static void classMenu(Scanner scanner){
+    public static void classMenu(){
         int choice = 0;
         
         do {
@@ -191,7 +189,7 @@ public class Main {
         } while (choice != 5);
     }
     
-    public static void enrollmentMenu(Scanner scanner){
+    public static void enrollmentMenu(){
         int choice = 0;
         
         do {
@@ -220,7 +218,7 @@ public class Main {
         } while (choice != 7);
     }
     
-    public static void activityMenu(Scanner scanner) {
+    public static void activityMenu() {
         int choice;
 
         do{
@@ -245,7 +243,7 @@ public class Main {
         } while (choice != 5);
     } 
     
-    public static void clearanceMenu(Scanner scanner) {
+    public static void clearanceMenu() {
         int choice = 0;
 
         do {

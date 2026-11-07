@@ -5,7 +5,7 @@
 package student_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.*;
-import java.util.*;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -13,13 +13,13 @@ import java.util.*;
  */
 public class DeleteStudent {
     public static void delete() {
-        Scanner inputScanner = new Scanner(System.in);
+        
         String studentId = "";
 
         do {
             try {
                 System.out.print("Enter Student ID to delete: ");
-                studentId = inputScanner.next();
+                studentId = scanner.next();
                 Integer.valueOf(studentId);
             } catch (NumberFormatException e) {
                 System.out.println("ERROR INVALID INPUT : " + "[" + studentId + "] " + "Contains non Integer values");

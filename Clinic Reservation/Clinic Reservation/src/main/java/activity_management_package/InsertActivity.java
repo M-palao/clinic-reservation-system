@@ -4,12 +4,12 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 public class InsertActivity {
 
     public static void insert() {
-        Scanner scanner = new Scanner(System.in);
+        
 
         String activityName;
         String activityLocation;

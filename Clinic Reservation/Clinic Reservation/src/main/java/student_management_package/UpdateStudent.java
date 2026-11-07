@@ -6,7 +6,7 @@
 package student_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.*;
-import java.util.*;
+import clinicreservation_main.scanner;
 
 
 
@@ -16,7 +16,7 @@ import java.util.*;
  */
 public class UpdateStudent {
     public static void update() {
-        Scanner inputScanner = new Scanner(System.in);
+        
         String studentId = "";
         String firstName;
         String lastName;
@@ -29,7 +29,7 @@ public class UpdateStudent {
         do {
             try {
                 System.out.print("Enter Student ID: ");
-                studentId = inputScanner.next();
+                studentId = scanner.next();
                 Integer.valueOf(studentId);
             } catch (NumberFormatException e) {
                 System.out.println("ERROR INVALID INPUT : " + "[" + studentId + "] " + "Contains non Integer values");
@@ -40,23 +40,23 @@ public class UpdateStudent {
 
         do {
             System.out.print("Enter New First Name: ");
-            firstName = inputScanner.next();
+            firstName = scanner.next();
         } while (firstName.isEmpty() || firstName.isBlank() || firstName.length() < 1);
 
         do {
             System.out.print("Enter New Last Name: ");
-            lastName = inputScanner.next();
+            lastName = scanner.next();
         } while (lastName.isEmpty() || lastName.isBlank() || lastName.length() < 1);
 
         do {
             System.out.print("Enter New Email: ");
-            email = inputScanner.next();
+            email = scanner.next();
         } while (email.isEmpty() || email.isBlank() || email.length() < 1 || !email.contains("@"));
 
         do {
             try {
                 System.out.print("Enter New Contact Number: ");
-                contactNum = inputScanner.next();
+                contactNum = scanner.next();
                 Integer.valueOf(contactNum);
             } catch (NumberFormatException e) {
                 System.out.println("ERROR INVALID INPUT : " + "[" + contactNum + "] " + "Contains non Integer values");
@@ -68,7 +68,7 @@ public class UpdateStudent {
         do {
             try {
                 System.out.print("Enter New Age: ");
-                age = inputScanner.next();
+                age = scanner.next();
                 Integer.valueOf(age);
             } catch (NumberFormatException e) {
                 System.out.println("ERROR INVALID INPUT : " + "[" + age + "] " + "Contains non Integer values");
@@ -79,12 +79,12 @@ public class UpdateStudent {
 
         do {
             System.out.print("Enter New Program: ");
-            program = inputScanner.next();
+            program = scanner.next();
         } while (program.isEmpty() || program.isBlank());
 
         do {
             System.out.print("Enter New Year Level: ");
-            yearLevel = inputScanner.next();
+            yearLevel = scanner.next();
         } while (yearLevel.isEmpty() || yearLevel.isBlank());
 
         updateSQL(studentId, firstName, lastName, email, contactNum, age, program, yearLevel);

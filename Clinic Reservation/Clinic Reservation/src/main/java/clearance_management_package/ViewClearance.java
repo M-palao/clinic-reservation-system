@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 /**
  *
  * @author Samuel Trinidad
@@ -54,10 +54,10 @@ public class ViewClearance {
     }
     
     public static void viewStudentStatus(String status){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String response = "";
         System.out.print("Input Activity Name To Check(type [A] to view all Students): ");
-        response = inputScanner.nextLine();
+        response = scanner.nextLine();
         if (response.equals("A")){
             viewAllStatusSQL(status);
         } else {

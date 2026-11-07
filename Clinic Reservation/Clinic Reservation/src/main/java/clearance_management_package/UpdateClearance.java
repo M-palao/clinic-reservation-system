@@ -7,7 +7,7 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class UpdateClearance {
     public static void update() {
-        Scanner scanner = new Scanner(System.in);
+        
         
         String clearanceId;
         String enrollmentId;

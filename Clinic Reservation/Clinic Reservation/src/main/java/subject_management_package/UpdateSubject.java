@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -15,21 +15,20 @@ import java.util.Scanner;
  */
 public abstract class UpdateSubject {
      public static void update(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String subjectId;
         String subjectDesc;
         
         do{
             System.out.print("Enter Subject ID: ");
-            subjectId = inputScanner.nextLine();   
+            subjectId = scanner.nextLine();   
         } while(subjectId.isEmpty() || subjectId.isBlank());
         
         do{
             System.out.print("Enter New Subject Description: ");
-            subjectDesc = inputScanner.nextLine();   
+            subjectDesc = scanner.nextLine();   
         } while(CheckTable.checkSubject(subjectDesc) == false || subjectDesc.isEmpty() || subjectDesc.isBlank());
         
-        inputScanner.close();
         updateSQL(subjectId, subjectDesc);
     }
     

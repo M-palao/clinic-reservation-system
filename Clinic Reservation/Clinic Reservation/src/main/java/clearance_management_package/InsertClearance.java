@@ -7,7 +7,7 @@ package clearance_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 import java.sql.*;
 
 
@@ -17,7 +17,7 @@ import java.sql.*;
  */
 public class InsertClearance {
     public static void insert() {
-        Scanner scanner = new Scanner(System.in);
+        
         
         String enrollment_id;
         String activity_id;

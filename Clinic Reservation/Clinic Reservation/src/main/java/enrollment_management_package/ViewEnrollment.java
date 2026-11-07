@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -78,11 +78,11 @@ public abstract class ViewEnrollment {
     }
     
     public static void viewStudentsFromClass(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String classId = "";
         do{
             System.out.print("Input Class ID: ");
-            classId = inputScanner.nextLine();
+            classId = scanner.nextLine();
             if (!CheckTable.checkClass(classId)){
                 System.out.println("Class ID doesn't exist in Class!");
             }

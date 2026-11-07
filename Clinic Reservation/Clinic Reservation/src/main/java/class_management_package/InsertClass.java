@@ -8,7 +8,7 @@ import clinicreservation_main.CheckTable;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -16,14 +16,14 @@ import java.util.Scanner;
  */
 public abstract class InsertClass {
     public static void insert(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String classId;
         String faciId = "";
         String subjectId;
         
         do{
             System.out.print("Enter Class ID: ");
-            classId = inputScanner.nextLine();
+            classId = scanner.nextLine();
             
             if (CheckTable.checkClass(classId)){
                 System.out.println("Class ID already Exists!");
@@ -34,7 +34,7 @@ public abstract class InsertClass {
         do{
             try{
                 System.out.print("Enter Facilitator ID: ");
-                faciId = inputScanner.next();
+                faciId = scanner.next();
                 Integer.valueOf(faciId);
                 
                 if (!CheckTable.checkFacilitator(faciId)){
@@ -47,17 +47,16 @@ public abstract class InsertClass {
             }
             
         } while(!CheckTable.checkFacilitator(faciId) || faciId.isEmpty() || faciId.isBlank());
-        inputScanner.nextLine();
+        scanner.nextLine();
         
         do{
             System.out.print("Enter Subject ID: ");
-            subjectId = inputScanner.nextLine();
+            subjectId = scanner.nextLine();
             if (!CheckTable.checkSubject(subjectId)){
                 System.out.println("No such ID found in Subject");
             } 
             
         } while(!CheckTable.checkSubject(subjectId) || subjectId.isEmpty() || subjectId.isBlank());
-        inputScanner.close();
         insertSql(classId, faciId, subjectId);
     }
     

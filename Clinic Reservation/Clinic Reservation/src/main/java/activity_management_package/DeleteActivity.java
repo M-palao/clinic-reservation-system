@@ -7,7 +7,7 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 /**
  *
  * @author Samuel Trinidad
@@ -15,8 +15,6 @@ import java.util.Scanner;
 public class DeleteActivity {
 
     public static void delete() {
-        Scanner scanner = new Scanner(System.in);
-
         String activityId = "";
 
         do {

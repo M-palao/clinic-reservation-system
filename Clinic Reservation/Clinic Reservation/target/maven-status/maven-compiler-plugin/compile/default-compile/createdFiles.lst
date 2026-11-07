@@ -16,6 +16,7 @@ facilitator_management_package\DeleteFacilitator.class
 activity_management_package\DeleteActivity.class
 activity_management_package\UpdateActivity.class
 clearance_management_package\InsertClearance.class
+clinicreservation_main\scanner.class
 facilitator_management_package\ViewFacilitator.class
 subject_management_package\InsertSubject.class
 clearance_management_package\ViewClearance.class

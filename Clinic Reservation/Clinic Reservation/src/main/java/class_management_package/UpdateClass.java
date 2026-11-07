@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -18,20 +18,20 @@ import java.util.Scanner;
  */
 public abstract class UpdateClass {
      public static void update(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String classId;
         String faciId = "";
         String subjectId;
         
         do{
             System.out.print("Enter Class ID: ");
-            classId = inputScanner.nextLine();   
+            classId = scanner.nextLine();   
         } while(classId.isEmpty() || classId.isBlank());
         
         do{
             try{
                 System.out.print("Enter New Facilitator ID: ");
-                faciId = inputScanner.next();
+                faciId = scanner.next();
                 Integer.valueOf(faciId);
             } catch (NumberFormatException e){
                 System.out.println("ERROR INVALID INPUT : " + "["+ faciId + "] " + "Contains non Integer values");
@@ -39,12 +39,11 @@ public abstract class UpdateClass {
             }
             
         } while(CheckTable.checkFacilitator(faciId) == false || faciId.isEmpty() || faciId.isBlank());
-        inputScanner.nextLine();
+        scanner.nextLine();
         do{
             System.out.print("Enter New Subject ID: ");
-            subjectId = inputScanner.nextLine();   
+            subjectId = scanner.nextLine();   
         } while(CheckTable.checkSubject(subjectId) == false || subjectId.isEmpty() || subjectId.isBlank());
-        inputScanner.close();
         updateSQL(classId, faciId, subjectId);
     }
     

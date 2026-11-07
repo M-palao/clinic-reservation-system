@@ -8,7 +8,7 @@ import clinicreservation_main.CheckTable;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 public abstract class UpdateEnrollment {
     public static void update(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String enrollmentId = "";
         String studentId = "";
         String classId;
@@ -25,7 +25,7 @@ public abstract class UpdateEnrollment {
             
              try{
                 System.out.print("Enter Enrollment ID: ");
-                enrollmentId = inputScanner.nextLine();   
+                enrollmentId = scanner.nextLine();   
                 Integer.valueOf(enrollmentId);
             } catch (NumberFormatException e){
                 System.out.println("ERROR INVALID INPUT : " + "["+ enrollmentId + "] " + "Contains non Integer values");
@@ -41,7 +41,7 @@ public abstract class UpdateEnrollment {
         do{
             try{
                 System.out.print("Enter New Student ID: ");
-                studentId = inputScanner.next();
+                studentId = scanner.next();
                 Integer.valueOf(studentId);
             } catch (NumberFormatException e){
                 System.out.println("ERROR INVALID INPUT : " + "["+ studentId + "] " + "Contains non Integer values");
@@ -53,19 +53,17 @@ public abstract class UpdateEnrollment {
             }
             
         } while(CheckTable.checkStudent(studentId) == false || studentId.isEmpty() || studentId.isBlank());
-        inputScanner.nextLine();
+        scanner.nextLine();
         
         do{
             System.out.print("Enter New Class ID: ");
-            classId = inputScanner.nextLine();   
+            classId = scanner.nextLine();   
             
             if (CheckTable.checkClass(classId) == false){
                  System.out.println("Class ID " + classId + " not found in Class!");
             }
             
         } while(CheckTable.checkClass(classId) == false || classId.isEmpty() || classId.isBlank());
-        inputScanner.close();
-        
         updateSQL(enrollmentId, studentId, classId);
     }
     

@@ -5,17 +5,17 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 public abstract class DeleteClass {
     public static void delete()
     {
-        Scanner inputScanner = new Scanner(System.in);
+        
         String classId;
         
         do{
             System.out.print("Enter Class ID to Delete: ");
-            classId = inputScanner.nextLine();
+            classId = scanner.nextLine();
             
             if (!CheckTable.checkClass(classId)){
                 System.out.println("Class " + classId + " not found.");
@@ -43,7 +43,5 @@ public abstract class DeleteClass {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        inputScanner.close();
     }
 }

@@ -3,13 +3,13 @@ package nurse_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 public class InsertNurse {
 
     public static void insert() {
 
-        Scanner inputScanner = new Scanner(System.in);
+        
 
         String firstName;
         String lastName;
@@ -18,26 +18,26 @@ public class InsertNurse {
 
         do {
             System.out.print("Enter New First Name: ");
-            firstName = inputScanner.next();
+            firstName = scanner.next();
 
         } while (firstName.isEmpty() || firstName.isBlank());
 
         do {
             System.out.print("Enter New Last Name: ");
-            lastName = inputScanner.next();
+            lastName = scanner.next();
 
         } while (lastName.isEmpty() || lastName.isBlank());
 
         do {
             System.out.print("Enter New Email: ");
-            email = inputScanner.next();
+            email = scanner.next();
 
         } while (email.isEmpty() || email.isBlank() || !email.contains("@"));
 
         do {
             try {
                 System.out.print("Enter New Contact Number: ");
-                contactNum = inputScanner.next();
+                contactNum = scanner.next();
 
                 Integer.valueOf(contactNum);
 

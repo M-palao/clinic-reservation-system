@@ -5,7 +5,7 @@
 package student_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.*;
-import java.util.*;
+import clinicreservation_main.scanner;
 /**
  *
  * @author Samuel Trinidad
@@ -13,7 +13,7 @@ import java.util.*;
 public class InsertStudent {
 
     public static void insert() {
-        Scanner inputScanner = new Scanner(System.in);
+        
         String firstName;
         String lastName;
         String email;
@@ -24,37 +24,37 @@ public class InsertStudent {
 
         do {
             System.out.print("Enter New First Name: ");
-            firstName = inputScanner.nextLine();
+            firstName = scanner.nextLine();
         } while (firstName.isEmpty() || firstName.isBlank() || firstName.length() < 1);
 
         do {
             System.out.print("Enter New Last Name: ");
-            lastName = inputScanner.nextLine();
+            lastName = scanner.nextLine();
         } while (lastName.isEmpty() || lastName.isBlank() || lastName.length() < 1);
 
         do {
             System.out.print("Enter New Email: ");
-            email = inputScanner.nextLine();
+            email = scanner.nextLine();
         } while (email.isEmpty() || email.isBlank() || email.length() < 1 || !email.contains("@"));
 
         do {
             System.out.print("Enter New Contact Number: ");
-            contactNum = inputScanner.nextLine();
+            contactNum = scanner.nextLine();
         } while (contactNum.isEmpty() || contactNum.isBlank() || !contactNum.matches("\\d+"));
 
         do {
             System.out.print("Enter New Age: ");
-            age = inputScanner.nextLine();
+            age = scanner.nextLine();
         } while (age.isEmpty() || age.isBlank() || !age.matches("\\d+"));
 
         do {
             System.out.print("Enter New Program: ");
-            program = inputScanner.nextLine();
+            program = scanner.nextLine();
         } while (program.isEmpty() || program.isBlank());
 
         do {
             System.out.print("Enter New Year Level: ");
-            yearLevel = inputScanner.nextLine();
+            yearLevel = scanner.nextLine();
         } while (yearLevel.isEmpty() || yearLevel.isBlank() || !yearLevel.matches("\\d+"));
 
         insertSQL(firstName, lastName, email, contactNum, age, program, yearLevel);

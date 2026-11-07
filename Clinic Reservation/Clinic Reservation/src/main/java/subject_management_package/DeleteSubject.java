@@ -6,17 +6,17 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 public abstract class DeleteSubject {
     public static void delete()
     {
-        Scanner inputScanner = new Scanner(System.in);
+        
         String subjectId;
         
         do{
             System.out.print("Enter Subject ID to Delete: ");
-            subjectId = inputScanner.nextLine();
+            subjectId = scanner.nextLine();
             
             if (!CheckTable.checkClass(subjectId)){
                 System.out.println("Subject " + subjectId + " not found.");
@@ -44,7 +44,5 @@ public abstract class DeleteSubject {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        inputScanner.close();
     }
 }

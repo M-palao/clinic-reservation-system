@@ -8,7 +8,7 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -16,14 +16,14 @@ import java.util.Scanner;
  */
 public class DeleteFacilitator {
     public static void delete(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String faciId = "";
         
         
         do{
             try{
                 System.out.print("Enter Facilitator ID to delete: ");
-                faciId = inputScanner.next();
+                faciId = scanner.next();
                 Integer.valueOf(faciId);
             } catch (NumberFormatException e){
                 System.out.println("ERROR INVALID INPUT : " + "["+ faciId + "] " + "Contains non Integer values");

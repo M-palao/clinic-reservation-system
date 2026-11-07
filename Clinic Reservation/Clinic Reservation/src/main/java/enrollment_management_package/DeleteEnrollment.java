@@ -9,7 +9,7 @@ import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 /**
  *
@@ -17,12 +17,12 @@ import java.util.Scanner;
  */
 public abstract class DeleteEnrollment {
     public static void delete(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String enrollmentId;
         
         do{
             System.out.print("Enter Enrollment ID to Delete: ");
-            enrollmentId = inputScanner.nextLine();
+            enrollmentId = scanner.nextLine();
             
             if (!CheckTable.checkEnrollment(enrollmentId)){
                 System.out.println("Enrollment " + enrollmentId + " not found.");
@@ -50,8 +50,5 @@ public abstract class DeleteEnrollment {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        
-        inputScanner.close();
-    
     }
 }

@@ -5,17 +5,17 @@ import clinicreservation_main.CheckTable;
 import clinicreservation_main.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.util.Scanner;
+import clinicreservation_main.scanner;
 
 public abstract class InsertSubject {
     public static void insert(){
-        Scanner inputScanner = new Scanner(System.in);
+        
         String subjectId;
         String subjectDesc;
         
         do{
             System.out.print("Enter Subject ID: ");
-            subjectId = inputScanner.nextLine();
+            subjectId = scanner.nextLine();
             
             if (CheckTable.checkClass(subjectId)){
                 System.out.println("Subject ID already Exists!");
@@ -25,7 +25,7 @@ public abstract class InsertSubject {
         
         do{
             System.out.print("Enter Subject Description: ");
-            subjectDesc = inputScanner.nextLine();
+            subjectDesc = scanner.nextLine();
             
             if (CheckTable.checkClass(subjectDesc)){
                 System.out.println("Subject description already Exists!");
@@ -33,7 +33,6 @@ public abstract class InsertSubject {
             
         } while(CheckTable.checkClass(subjectDesc) || subjectDesc.isEmpty() || subjectDesc.isBlank());
         
-        inputScanner.close();
         insertSql(subjectId, subjectDesc);
     }
     
