@@ -4,9 +4,8 @@ import clinicreservation_main.DBConnection;
 import java.sql.*;
 import clinicreservation_main.scanner;
 
-public class UpdateStudent {
+public abstract class UpdateStudent {
     public static void update() {
-        
         String studentId = "";
         String firstName;
         String lastName;

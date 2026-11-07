@@ -8,8 +8,6 @@ import clinicreservation_main.scanner;
 
 public abstract class UpdateActivity {
     public static void update() {
-        
-
         String activityId;
         String activityName;
         String activityLocation;

@@ -5,9 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-public class UpdateNurse {
+public abstract class UpdateNurse {
     public static void update() {
-        
         String nurse_Id = "";
         String first_Name;
         String last_Name;

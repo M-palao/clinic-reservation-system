@@ -8,7 +8,6 @@ import clinicreservation_main.scanner;
 
 public abstract class InsertEnrollment {
     public static void insert(){
-        
         String studentId = "";
         String classId;
         

@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
 public abstract class UpdateClass {
-     public static void update(){
+    public static void update() {
         String classId;
         String faciId = "";
         String subjectId;

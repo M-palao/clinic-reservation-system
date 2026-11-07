@@ -5,9 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-public class UpdateFacilitator {
+public abstract class UpdateFacilitator {
     public static void update(){
-        
         String faciId = "";
         String firstName;
         String lastName;

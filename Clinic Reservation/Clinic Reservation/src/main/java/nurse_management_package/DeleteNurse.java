@@ -6,11 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
-public class DeleteNurse {
+public abstract class DeleteNurse {
     public static void delete() {
-        
         String nurse_Id = "";
-        
         
         do{
             try {

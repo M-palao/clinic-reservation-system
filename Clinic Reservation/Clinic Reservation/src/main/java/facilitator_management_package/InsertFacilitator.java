@@ -5,9 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-public class InsertFacilitator {
+public abstract class InsertFacilitator {
     public static void insert(){
-        
         String firstName;
         String lastName;
         String email;

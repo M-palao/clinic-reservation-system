@@ -5,12 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-public class InsertNurse {
-
+public abstract class InsertNurse {
     public static void insert() {
-
-        
-
         String firstName;
         String lastName;
         String email;

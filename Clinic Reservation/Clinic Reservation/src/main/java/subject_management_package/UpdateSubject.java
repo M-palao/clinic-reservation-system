@@ -6,13 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
-/**
- *
- * @author USER
- */
 public abstract class UpdateSubject {
-     public static void update(){
-        
+    public static void update() {
         String subjectId;
         String subjectDesc;
         

@@ -8,9 +8,7 @@ import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
 public abstract class DeleteSubject {
-    public static void delete()
-    {
-        
+    public static void delete() {
         String subjectId;
         
         do{

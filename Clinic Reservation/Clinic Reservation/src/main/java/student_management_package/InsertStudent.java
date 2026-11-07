@@ -4,10 +4,8 @@ import clinicreservation_main.DBConnection;
 import java.sql.*;
 import clinicreservation_main.scanner;
 
-public class InsertStudent {
-
+public abstract class InsertStudent {
     public static void insert() {
-        
         String firstName;
         String lastName;
         String email;

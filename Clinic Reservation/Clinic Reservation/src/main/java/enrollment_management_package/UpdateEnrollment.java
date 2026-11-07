@@ -7,8 +7,7 @@ import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
 public abstract class UpdateEnrollment {
-    public static void update(){
-        
+    public static void update(){    
         String enrollmentId = "";
         String studentId = "";
         String classId;

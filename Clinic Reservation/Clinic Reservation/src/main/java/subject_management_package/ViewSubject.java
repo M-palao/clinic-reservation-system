@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public abstract class ViewSubject{
-    public static void view(){
+    public static void view() {
         String sql = "SELECT * FROM SUBJECT ";
         
         try ( Connection con = DBConnection.getConnection();

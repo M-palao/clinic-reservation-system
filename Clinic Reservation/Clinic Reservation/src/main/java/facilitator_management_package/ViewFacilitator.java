@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ViewFacilitator {
+public abstract class ViewFacilitator {
     public static void view(){
         String sql = "SELECT * FROM FACILITATOR";
         

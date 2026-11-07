@@ -4,9 +4,8 @@ import clinicreservation_main.DBConnection;
 import java.sql.*;
 import clinicreservation_main.scanner;
 
-public class DeleteStudent {
+public abstract class DeleteStudent {
     public static void delete() {
-        
         String studentId = "";
 
         do {

@@ -8,8 +8,6 @@ import clinicreservation_main.scanner;
 
 public abstract class InsertActivity {
     public static void insert() {
-        
-
         String activityName;
         String activityLocation;
         String startDate;

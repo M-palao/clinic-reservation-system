@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import clinicreservation_main.scanner;
 
 public abstract class InsertClass {
-    public static void insert(){
+    public static void insert() {
         String classId;
         String faciId = "";
         String subjectId;

@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public abstract class CheckTable {
-    private static boolean check(String sql, String id){
+    private static boolean check(String sql, String id) {
         try (
             Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql);

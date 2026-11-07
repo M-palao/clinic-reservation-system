@@ -3,7 +3,7 @@ package student_management_package;
 import clinicreservation_main.DBConnection;
 import java.sql.*;
 
-public class ViewStudent {
+public abstract class ViewStudent {
     public static void view() {
         String sql = "SELECT * FROM STUDENT";
 

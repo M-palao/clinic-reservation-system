@@ -6,11 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import clinicreservation_main.scanner;
 
-public class DeleteFacilitator {
+public abstract class DeleteFacilitator {
     public static void delete(){
-        
         String faciId = "";
-        
         
         do{
             try{

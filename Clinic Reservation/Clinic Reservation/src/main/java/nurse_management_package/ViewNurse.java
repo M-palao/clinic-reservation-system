@@ -6,10 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ViewNurse {
-
+public abstract class ViewNurse {
     public static void view() {
-
         String sql = "SELECT * FROM NURSE";
 
         try (
