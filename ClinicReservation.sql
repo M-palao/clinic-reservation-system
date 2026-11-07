@@ -174,6 +174,28 @@ VALUES
     (9, 1, 4, 'Whir', 'Gonady', '2026-10-22', '15:40:23', 'REJECTED', 'Student\'s twin substituted during Evaluation'),
     (10, 1, null, null, null, null, null, 'PENDING', null);
 
+CREATE VIEW CLEARANCE_FULL_VIEW AS
+SELECT 
+	clearance_id,
+    first_name,
+    last_name,
+    class_id,
+    activity_name,
+	nurse_id,
+    physician_first_name, 
+    physician_last_name, 
+    evaluated_date, 
+    evaluated_time, 
+    status, 
+    rejection_reason
+FROM CLEARANCE C
+JOIN ENROLLMENT E ON E.enrollment_id = C.enrollment_id
+JOIN STUDENT S ON S.student_id =  E.student_id
+JOIN ACTIVITY A ON A.activity_id = C.activity_id;
+
+SELECT * FROM CLEARANCE_FULL_VIEW;
+
+
 SHOW TABLES;
 SELECT * FROM STUDENT;
 SELECT * FROM FACILITATOR;
@@ -184,3 +206,6 @@ SELECT * FROM ENROLLMENT;
 SELECT * FROM ACTIVITY;
 SELECT * FROM CLEARANCE;
 
+
+    
+    
