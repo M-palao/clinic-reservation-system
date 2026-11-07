@@ -1,6 +1,8 @@
 package facilitator_management_package;
 
+import clinicreservation_main.CheckTable;
 import clinicreservation_main.DBConnection;
+import clinicreservation_main.scanner;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,6 +38,51 @@ public abstract class ViewFacilitator {
             e.printStackTrace();
         
         }
+    }
+    
+    public static void viewClassesHandled() {
         
+        String facilitatorId = "";
+        do{
+            System.out.print("Input Facilitator ID: ");
+            facilitatorId = scanner.nextLine();
+            if (!CheckTable.checkFacilitator(facilitatorId)){
+                System.out.println("Facilitator ID doesn't exist in Facilitator!");
+            }
+        
+        }while(!CheckTable.checkFacilitator(facilitatorId));
+        
+        executeClassesHandledSQL(facilitatorId);
+    }
+    
+    private static void executeClassesHandledSQL(String facilitatorId){
+        String sql = "SELECT C.class_id, C.subject_id, S.subject_description " +
+                     "FROM CLASS C " +
+                     "JOIN SUBJECT S ON C.subject_id = S.subject_id " +
+                     "WHERE C.facilitator_id = ?";
+        
+        try ( Connection con = DBConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ){
+            
+            ps.setString(1, facilitatorId);
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%-10s %-12s %s%n",
+                    "Class ID", "Subject ID", "Subject Descsription");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String classID = rs.getString("class_id");
+                String subjectID = rs.getString("subject_id");
+                String subjectDesc = rs.getString("subject_description");
+
+                System.out.printf("%-10s %-12s %s%n",
+                        classID, subjectID, subjectDesc);
+            }
+        
+        } catch(SQLException e){
+            e.printStackTrace();
+        
+        }
     }
 }

@@ -95,9 +95,10 @@ public class Main {
             System.out.println("\n===== FACILITATOR MANAGEMENT =====");
             System.out.println("1. Insert Facilitator");
             System.out.println("2. View Facilitator");
-            System.out.println("3. Update Facilitator");
-            System.out.println("4. Delete Facilitator");
-            System.out.println("5. Return to Main Menu");
+            System.out.println("3. View Classes Handled by Facilitator");
+            System.out.println("4. Update Facilitator");
+            System.out.println("5. Delete Facilitator");
+            System.out.println("6. Return to Main Menu");
 
             System.out.print("Enter Choice: ");
             choice = scanner.nextInt();
@@ -105,12 +106,13 @@ public class Main {
             switch (choice) {
                 case 1: InsertFacilitator.insert(); break;
                 case 2: ViewFacilitator.view(); break;
-                case 3: UpdateFacilitator.update(); break;
-                case 4: DeleteFacilitator.delete(); break;
-                case 5: System.out.println("Returning to Main Menu..."); break;
+                case 3: ViewFacilitator.viewClassesHandled(); break;
+                case 4: UpdateFacilitator.update(); break;
+                case 5: DeleteFacilitator.delete(); break;
+                case 6: System.out.println("Returning to Main Menu..."); break;
                 default: System.out.println("Invalid Choice");
             }
-        } while (choice != 5);
+        } while (choice != 6);
     }
    
     public static void nurseMenu() {
@@ -197,9 +199,10 @@ public class Main {
             System.out.println("2. View Enrollment");
             System.out.println("3. View Student Count for Each Class");
             System.out.println("4. View Students From Specific Class");
-            System.out.println("5. Update Enrollment");
-            System.out.println("6. Delete Enrollment");
-            System.out.println("7. Return to Main Menu");
+            System.out.println("5. Count clearance statuses From Specific Class");
+            System.out.println("6. Update Enrollment");
+            System.out.println("7. Delete Enrollment");
+            System.out.println("8. Return to Main Menu");
 
             System.out.print("Enter Choice: ");
             choice = scanner.nextInt();
@@ -209,12 +212,13 @@ public class Main {
                 case 2: ViewEnrollment.view(); break;
                 case 3: ViewEnrollment.viewStudentCount(); break;
                 case 4: ViewEnrollment.viewStudentsFromClass(); break;
-                case 5: UpdateEnrollment.update(); break;
-                case 6: DeleteEnrollment.delete(); break;
-                case 7: System.out.println("Returning to Main Menu..."); break;
+                case 5: ViewEnrollment.CountClearancesInClass(); break;
+                case 6: UpdateEnrollment.update(); break;
+                case 7: DeleteEnrollment.delete(); break;
+                case 8: System.out.println("Returning to Main Menu..."); break;
                 default: System.out.println("Invalid Choice");
             }
-        } while (choice != 7);
+        } while (choice != 8);
     }
     
     public static void activityMenu() {

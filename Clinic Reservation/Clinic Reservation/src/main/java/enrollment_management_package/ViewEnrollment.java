@@ -81,10 +81,10 @@ public abstract class ViewEnrollment {
         
         }while(!CheckTable.checkClass(classId));
         
-        executeClassSQL(classId);
+        executeStudentsFromClassSQL(classId);
     }
     
-    private static void executeClassSQL(String classId){
+    private static void executeStudentsFromClassSQL(String classId){
         String sql = "SELECT * " +
                      "FROM STUDENT " +
                      "WHERE student_id " +
@@ -118,6 +118,51 @@ public abstract class ViewEnrollment {
             e.printStackTrace();
         
         }
+    }
+        
+    public static void CountClearancesInClass() {
+        
+        String classId = "";
+        do{
+            System.out.print("Input Class ID: ");
+            classId = scanner.nextLine();
+            if (!CheckTable.checkClass(classId)){
+                System.out.println("Class ID doesn't exist in Class!");
+            }
+        
+        }while(!CheckTable.checkClass(classId));
+        
+        executeCountClearancesInClassSQL(classId);
+    }
     
+    private static void executeCountClearancesInClassSQL(String classId){
+        String sql = "SELECT C.status, COUNT(*) AS count " +
+                     "FROM CLEARANCE C " +
+                     "JOIN ENROLLMENT E ON C.enrollment_id = E.enrollment_id " +
+                     "WHERE class_id = ? " +
+                     "GROUP BY C.status";
+        
+        try ( Connection con = DBConnection.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ){
+            
+            ps.setString(1, classId);
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%-10s %-5s%n",
+                    "Status", "Count");
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------");
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String status = rs.getString("status");
+                String count = rs.getString("count");
+
+                System.out.printf("%-12s %-5s%n",
+                        status, count);
+            }
+        
+        } catch(SQLException e){
+            e.printStackTrace();
+        
+        }
     }
 }
